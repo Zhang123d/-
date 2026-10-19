@@ -23,13 +23,31 @@ Chinese paper reading notes on LLM security, with a focus on methods, experiment
 
 **[阅读完整笔记](https://github.com/Zhang123d/paper-reading-notes/blob/main/causal-analyst/README.md)** · [论文页面](https://www.ndss-symposium.org/ndss-paper/a-causal-perspective-for-enhancing-jailbreak-attack-and-defense/) · [作者代码](https://github.com/Master-PLC/Causal-Analyst)
 
+### TRAP：策略树如何学习，实验优势如何解释
+
+**论文：** *TRAP: Tree-Guided Reinforcement-Augmented Probing for Automated LLM Jailbreaking* · arXiv v1，2026
+
+这篇笔记沿着「固定策略树 → 共享偏好抽样 → 提示构造 → 反馈更新」解释框架，重点区分：
+
+> 抽到不同路径，是否意味着根据当前 goal 选择了适合的策略？
+
+笔记包含：
+
+- 偏好值如何转成逐层抽样概率，为什么探索与任务匹配需要区分。
+- 主比较、52 个目标消融与多裁判验证分别能说明什么。
+- 既有策略组织、层次选择及检索复用的贡献，以及实验归因的边界。
+- 框架图、学习迭代图与 164 个叶节点的策略树展开图。
+
+**[阅读第二篇笔记](trap/README.md)** · [论文页面](https://arxiv.org/abs/2610.17313v1) · [作者代码](https://github.com/Rezamirbagheri110/TRAP)
+
 ## 笔记索引
 
 | 论文 | 会议 | 主题 | 阅读切入点 |
 | --- | --- | --- | --- |
 | [Causal Analyst](https://github.com/Zhang123d/paper-reading-notes/blob/main/causal-analyst/README.md) | NDSS 2026 | 大模型安全、越狱攻防、因果发现 | 因果图的作用能否与特征知识、额外训练区分？ |
+| [TRAP](trap/README.md) | arXiv v1，2026 | 黑盒越狱、策略树、梯度赌博机、经验复用 | 共享策略偏好是否实现了对当前 goal 的匹配？ |
 
-当前收录 1 篇笔记。
+当前收录 2 篇笔记。
 
 ## 阅读方式
 
