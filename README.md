@@ -40,14 +40,32 @@ Chinese paper reading notes on LLM security, with a focus on methods, experiment
 
 **[阅读第二篇笔记](trap/README.md)** · [论文页面](https://arxiv.org/abs/2610.17313v1) · [作者代码](https://github.com/Rezamirbagheri110/TRAP)
 
+### Best-of-N：简单随机扰动，为什么值得系统研究？
+
+**论文：** *Best-of-N Jailbreaking* · NeurIPS 2025
+
+这篇笔记沿着「随机增强 → 重复查询 → 成功判定 → 预算规律」梳理三模态实验，重点讨论：
+
+> 预算内成功过一次，与找到一个稳定有效的输入，有什么区别？
+
+笔记包含：
+
+- 单次成功率、预算内目标覆盖率与成功输入重复可靠性的区分。
+- 幂律实际拟合的对象、预测区间，以及增强和温度消融。
+- 查询预算、人工复核、提前停止与访问条件对结论的影响。
+- 原文数字冲突、精读路线，以及与 TRAP 和 Causal Analyst 的联系。
+
+**[阅读第三篇笔记](best-of-n/README.md)** · [会议页面](https://papers.nips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html) · [作者代码](https://github.com/jplhughes/bon-jailbreaking)
+
 ## 笔记索引
 
-| 论文 | 会议 | 主题 | 阅读切入点 |
+| 论文 | 会议 / 版本 | 主题 | 阅读切入点 |
 | --- | --- | --- | --- |
 | [Causal Analyst](https://github.com/Zhang123d/paper-reading-notes/blob/main/causal-analyst/README.md) | NDSS 2026 | 大模型安全、越狱攻防、因果发现 | 因果图的作用能否与特征知识、额外训练区分？ |
 | [TRAP](trap/README.md) | arXiv v1，2026 | 黑盒越狱、策略树、梯度赌博机、经验复用 | 共享策略偏好是否实现了对当前 goal 的匹配？ |
+| [Best-of-N](best-of-n/README.md) | NeurIPS 2025 | 黑盒越狱、多模态、随机增强、预算规律 | 高预算覆盖率是否意味着输入稳定有效？ |
 
-当前收录 2 篇笔记。
+当前收录 3 篇笔记。
 
 ## 阅读方式
 
