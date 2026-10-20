@@ -40,20 +40,20 @@ Chinese paper reading notes on LLM security, with a focus on methods, experiment
 
 **[阅读第二篇笔记](trap/README.md)** · [论文页面](https://arxiv.org/abs/2610.17313v1) · [作者代码](https://github.com/Rezamirbagheri110/TRAP)
 
-### Best-of-N：简单随机扰动，为什么值得系统研究？
+### Best-of-N：随机增强与大模型多模态越狱
 
 **论文：** *Best-of-N Jailbreaking* · NeurIPS 2025
 
-这篇笔记沿着「随机增强 → 重复查询 → 成功判定 → 预算规律」梳理三模态实验，重点讨论：
+这篇图文笔记从中文摘要和整体框架入手，介绍文本、图像、音频中的随机增强，再结合实验图表理解：
 
 > 预算内成功过一次，与找到一个稳定有效的输入，有什么区别？
 
 笔记包含：
 
-- 单次成功率、预算内目标覆盖率与成功输入重复可靠性的区分。
-- 幂律实际拟合的对象、预测区间，以及增强和温度消融。
-- 查询预算、人工复核、提前停止与访问条件对结论的影响。
-- 原文数字冲突、精读路线，以及与 TRAP 和 Causal Analyst 的联系。
+- 论文信息、研究背景、核心贡献与三模态方法讲解。
+- 作者框架图，以及根据原文表3重绘的预算—ASR图。
+- 预算规律、组合方法与成功输入的重复可靠性。
+- 集中的阅读思考、精读建议与公开资源说明。
 
 **[阅读第三篇笔记](best-of-n/README.md)** · [会议页面](https://papers.nips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html) · [作者代码](https://github.com/jplhughes/bon-jailbreaking)
 
