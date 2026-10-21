@@ -1,0 +1,426 @@
+{
+  "title": "大模型越狱研究的演进主线",
+  "selected_ids": [
+    "[20]",
+    "[7]",
+    "N05",
+    "N07",
+    "N08",
+    "[10]",
+    "[9]",
+    "N32",
+    "N16",
+    "N18",
+    "N26",
+    "N25",
+    "N27"
+  ],
+  "selection": "选取既有总结中可串联自动提示构造、黑盒搜索、策略学习与复用的代表方法；补充表达/预算与护栏攻防两条并行线索。不是引用量排名或完整领域谱系。",
+  "main_chain": [
+    "[20]",
+    "[7]",
+    "N05",
+    "N07",
+    "N16",
+    "N18",
+    "N27"
+  ],
+  "main_display": [
+    {
+      "id": "[20]",
+      "date": "2023.07",
+      "name": "GCG",
+      "category": "白盒 · 梯度优化",
+      "description": "梯度与贪心搜索；逐词元优化对抗后缀",
+      "venue": "首次公开：2023"
+    },
+    {
+      "id": "[7]",
+      "date": "2023.10",
+      "name": "AutoDAN-Liu",
+      "category": "白盒评分 · 遗传搜索",
+      "description": "分层遗传算法；演化保留语义的提示",
+      "venue": "ICLR 2024"
+    },
+    {
+      "id": "N05",
+      "date": "2023.10",
+      "name": "PAIR",
+      "category": "黑盒 · 反馈改写",
+      "description": "借助辅助攻击模型；按目标反馈迭代改写",
+      "venue": "首次公开：2023"
+    },
+    {
+      "id": "N07",
+      "date": "2023.12",
+      "name": "TAP",
+      "category": "黑盒 · 提示树搜索",
+      "description": "扩展候选提示分支；剪去低效候选",
+      "venue": "NeurIPS 2024"
+    },
+    {
+      "id": "N16",
+      "date": "2024.06",
+      "name": "RL-JACK",
+      "category": "黑盒 · 强化学习",
+      "description": "学习提示生成动作；以稠密奖励引导搜索",
+      "venue": "首次公开：2024"
+    },
+    {
+      "id": "N18",
+      "date": "2024.10",
+      "name": "AutoDAN-Turbo",
+      "category": "黑盒 · 策略自探索",
+      "description": "自动发现并积累策略；跨任务复用经验",
+      "venue": "ICLR 2025"
+    },
+    {
+      "id": "N27",
+      "date": "2026.10",
+      "name": "TRAP",
+      "category": "黑盒 · 层次策略学习",
+      "description": "组织共享语义策略树；沿路径更新选择偏好",
+      "venue": "2026 年近期工作"
+    }
+  ],
+  "primary_supplements": {
+    "[20]": {
+      "paper": "GCG",
+      "url": "https://arxiv.org/pdf/2307.15043#page=1",
+      "pdf_pages": [
+        1
+      ]
+    },
+    "[7]": {
+      "paper": "AutoDAN-Liu",
+      "url": "https://arxiv.org/pdf/2310.04451#page=1",
+      "pdf_pages": [
+        1
+      ]
+    },
+    "N05": {
+      "paper": "PAIR",
+      "url": "https://arxiv.org/pdf/2310.08419#page=1",
+      "pdf_pages": [
+        1
+      ]
+    },
+    "N18": {
+      "paper": "AutoDAN-Turbo",
+      "url": "https://arxiv.org/pdf/2410.05295#page=1",
+      "pdf_pages": [
+        1
+      ]
+    }
+  },
+  "time_policy": "以首次公开时间为主，会议年另注。DUALBREACH 仅按已核对的 NDSS 2026 会议年标示。2026 两项为近期阅读延伸。",
+  "date_sources": {
+    "[20]": {
+      "date": "2023-07-27",
+      "url": "https://arxiv.org/abs/2307.15043"
+    },
+    "[7]": {
+      "date": "2023-10-03",
+      "url": "https://arxiv.org/abs/2310.04451"
+    },
+    "N05": {
+      "date": "2023-10-12",
+      "url": "https://arxiv.org/abs/2310.08419"
+    },
+    "N07": {
+      "date": "2023-12-04",
+      "url": "https://arxiv.org/abs/2312.02119"
+    },
+    "N16": {
+      "date": "2024-06-13",
+      "url": "https://arxiv.org/abs/2406.08725"
+    },
+    "N18": {
+      "date": "2024-10-03",
+      "url": "https://arxiv.org/abs/2410.05295"
+    },
+    "N27": {
+      "date": "2026-10-12",
+      "url": "https://arxiv.org/abs/2610.17313v1"
+    },
+    "N26": {
+      "date": "2024-12-04",
+      "url": "https://arxiv.org/abs/2412.03556"
+    },
+    "N08": {
+      "date": "2023-12-07",
+      "url": "https://arxiv.org/abs/2312.06674"
+    }
+  },
+  "relation_policy": "主时间轴/灰色箭头：阅读者组织的议题演进，不声称直接推导。绿色箭头：Many-shot 与 BoN 在后者原文第3页实际组合。",
+  "font": "Microsoft YaHei / Microsoft YaHei Bold; SVG live text; PDF embedded font subset.",
+  "canvas": "24 × 12 in，面向仓库展示与汇报，非期刊单栏尺寸。",
+  "qa": {
+    "text_labels": 84,
+    "text_overlaps": 0,
+    "single_schematic": true
+  },
+  "entries": [
+    {
+      "sort_year": "2023",
+      "year": "2023",
+      "id": "[20]",
+      "work": "GCG / AdvBench",
+      "authors": "A. Zou 等",
+      "category": "攻击·自然语言·白盒·后缀搜索",
+      "contribution": "执行逐词元梯度搜索，优化越狱提示。",
+      "url": "https://arxiv.org/abs/2307.15043",
+      "background": "[DUALBREACH](https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf) 第3页",
+      "evidence": {
+        "paper": "DUALBREACH",
+        "url": "https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf",
+        "pdf_pages": [
+          3
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2023",
+      "year": "2023；ICLR 2024",
+      "id": "[7]",
+      "work": "AutoDAN-Liu",
+      "authors": "X. Liu 等",
+      "category": "攻击·自然语言·白盒评分·遗传搜索",
+      "contribution": "使用遗传算法演化有效的越狱提示。",
+      "url": "https://arxiv.org/abs/2310.04451",
+      "background": "[DUALBREACH](https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf) 第3页",
+      "evidence": {
+        "paper": "DUALBREACH",
+        "url": "https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf",
+        "pdf_pages": [
+          3
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2023",
+      "year": "2023；SaTML 2025",
+      "id": "N05",
+      "work": "PAIR",
+      "authors": "P. Chao 等",
+      "category": "攻击·黑盒·反馈改写",
+      "contribution": "借助辅助攻击模型，迭代改写提示。",
+      "url": "https://arxiv.org/abs/2310.08419",
+      "background": "[TRAP](https://arxiv.org/abs/2610.17313) 第4页",
+      "evidence": {
+        "paper": "TRAP",
+        "url": "https://arxiv.org/abs/2610.17313",
+        "pdf_pages": [
+          4
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2023",
+      "year": "2023；NeurIPS 2024",
+      "id": "N07",
+      "work": "TAP",
+      "authors": "A. Mehrotra 等",
+      "category": "攻击·黑盒·树搜索",
+      "contribution": "针对每个攻击目标分别建立提示树，通过扩展与剪枝搜索提示。",
+      "url": "https://arxiv.org/abs/2312.02119",
+      "background": "[TRAP](https://arxiv.org/abs/2610.17313) 第4页",
+      "evidence": {
+        "paper": "TRAP",
+        "url": "https://arxiv.org/abs/2610.17313",
+        "pdf_pages": [
+          4
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2023",
+      "year": "2023",
+      "id": "N08",
+      "work": "Llama Guard",
+      "authors": "H. Inan 等",
+      "category": "护栏·安全分类 LLM",
+      "contribution": "根据安全风险分类体系微调 LLM，对输入和输出进行安全分类并生成风险标签。",
+      "url": "https://arxiv.org/abs/2312.06674",
+      "background": "[Llama Guard](https://arxiv.org/pdf/2312.06674) 第1页",
+      "evidence": {
+        "paper": "Llama Guard",
+        "url": "https://arxiv.org/pdf/2312.06674",
+        "pdf_pages": [
+          1
+        ],
+        "kind": "原论文补查",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2024",
+      "year": "2024（ACL）",
+      "id": "[10]",
+      "work": "PAP",
+      "authors": "Y. Zeng 等",
+      "category": "攻击·黑盒·自然语言说服",
+      "contribution": "将有害指令嵌入有说服力的上下文，无需访问模型内部即可诱导不安全回答。",
+      "url": "https://aclanthology.org/2024.acl-long.773/",
+      "background": "[DUALBREACH](https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf) 第3页",
+      "evidence": {
+        "paper": "DUALBREACH",
+        "url": "https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf",
+        "pdf_pages": [
+          3
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2024",
+      "year": "2024（ACL）",
+      "id": "[9]",
+      "work": "PRP",
+      "authors": "N. Mangaokar 等",
+      "category": "攻击·输出护栏",
+      "contribution": "先构造针对护栏模型的通用对抗前缀，再将此前缀传播到主模型的响应中。",
+      "url": "https://aclanthology.org/2024.acl-long.591/",
+      "background": "[PRP](https://aclanthology.org/2024.acl-long.591.pdf) 第1页",
+      "evidence": {
+        "paper": "PRP",
+        "url": "https://aclanthology.org/2024.acl-long.591.pdf",
+        "pdf_pages": [
+          1
+        ],
+        "kind": "原论文补查",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2024",
+      "year": "2024",
+      "id": "N32",
+      "work": "Many-shot Jailbreaking",
+      "authors": "C. Anil 等",
+      "category": "攻击·黑盒·长上下文",
+      "contribution": "在长上下文中提供数百个不良行为示范，研究攻击效果随示范数量的扩展规律。",
+      "url": "https://www.anthropic.com/research/many-shot-jailbreaking",
+      "background": "[Many-shot Jailbreaking](https://www-cdn.anthropic.com/af5633c94ed2beb282f6a53c595eb437e8e7b630/Many_Shot_Jailbreaking__2024_04_02_0936.pdf) 第1页",
+      "evidence": {
+        "paper": "Many-shot Jailbreaking",
+        "url": "https://www-cdn.anthropic.com/af5633c94ed2beb282f6a53c595eb437e8e7b630/Many_Shot_Jailbreaking__2024_04_02_0936.pdf",
+        "pdf_pages": [
+          1
+        ],
+        "kind": "原论文补查",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2024",
+      "year": "2024",
+      "id": "N16",
+      "work": "RL-JACK",
+      "authors": "X. Chen 等",
+      "category": "攻击·黑盒·强化学习",
+      "contribution": "将越狱提示生成建模为搜索问题，结合 LLM 辅助动作空间和稠密奖励进行强化学习。",
+      "url": "https://arxiv.org/abs/2406.08725",
+      "background": "[RL-JACK](https://arxiv.org/pdf/2406.08725) 第1页",
+      "evidence": {
+        "paper": "RL-JACK",
+        "url": "https://arxiv.org/pdf/2406.08725",
+        "pdf_pages": [
+          1
+        ],
+        "kind": "原论文补查",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2024",
+      "year": "2024；ICLR 2025",
+      "id": "N18",
+      "work": "AutoDAN-Turbo",
+      "authors": "X. Liu 等",
+      "category": "攻击·黑盒·策略自探索",
+      "contribution": "跨任务和模型复用已发现的攻击策略。",
+      "url": "https://arxiv.org/abs/2410.05295",
+      "background": "[TRAP](https://arxiv.org/abs/2610.17313) 第2页",
+      "evidence": {
+        "paper": "TRAP",
+        "url": "https://arxiv.org/abs/2610.17313",
+        "pdf_pages": [
+          2
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2024",
+      "year": "2024；NeurIPS 2025",
+      "id": "N26",
+      "work": "Best-of-N Jailbreaking",
+      "authors": "J. Hughes 等",
+      "category": "攻击·黑盒·随机增强",
+      "contribution": "反复采样提示增强变体，并扩展到视觉和音频输入，研究攻击效果随采样数量的变化。",
+      "url": "https://arxiv.org/abs/2412.03556",
+      "background": "[Best-of-N Jailbreaking](https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf) 第1页",
+      "evidence": {
+        "paper": "Best-of-N Jailbreaking",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf",
+        "pdf_pages": [
+          1
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2026",
+      "year": "2026（NDSS；初稿年待核）",
+      "id": "N25",
+      "work": "DUALBREACH",
+      "authors": "X. Huang 等",
+      "category": "攻击·主模型 + 护栏",
+      "contribution": "结合目标驱动初始化和多目标优化，同时优化绕过护栏与诱导主模型有害回答的提示。",
+      "url": "https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf",
+      "background": "[DUALBREACH](https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf) 第2–3页",
+      "evidence": {
+        "paper": "DUALBREACH",
+        "url": "https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf",
+        "pdf_pages": [
+          2,
+          3
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    },
+    {
+      "sort_year": "2026",
+      "year": "2026",
+      "id": "N27",
+      "work": "TRAP",
+      "authors": "M. R. Mirbagheri、A. M. Sadeghzadeh",
+      "category": "攻击·黑盒·层次策略",
+      "contribution": "以梯度赌博机选择共享策略树路径，沿路径传播评判反馈，并结合检索跨目标复用经验。",
+      "url": "https://arxiv.org/abs/2610.17313",
+      "background": "[TRAP](https://arxiv.org/abs/2610.17313) 第2页",
+      "evidence": {
+        "paper": "TRAP",
+        "url": "https://arxiv.org/abs/2610.17313",
+        "pdf_pages": [
+          2
+        ],
+        "kind": "已读论文背景",
+        "checked": "2026-10-21"
+      }
+    }
+  ]
+}

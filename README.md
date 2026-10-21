@@ -2,7 +2,7 @@
 
 整理大模型越狱攻防的研究脉络，记录论文方法、实验证据与阅读思考。
 
-**46 项背景文献与工具 · 3 篇精读笔记 · 1 张主要论文关系图**
+**46 项背景文献与工具 · 3 篇精读笔记 · 时间线与关系图**
 
 ## 研究背景
 
@@ -10,7 +10,7 @@
 
 从已读论文的引言与相关工作出发，按年份汇总攻击、护栏和防御。核心贡献依据原文，出处保留论文名与 PDF 页码。
 
-[核心文献表](jailbreak-background/README.md#literature) · [主要论文关系图](jailbreak-background/README.md#relations) · [文献索引](jailbreak-background/资料/文献索引.json)
+[研究时间线](jailbreak-background/README.md#timeline) · [核心文献表](jailbreak-background/README.md#literature) · [主要论文关系图](jailbreak-background/README.md#relations) · [文献索引](jailbreak-background/资料/文献索引.json)
 
 ## 精读笔记
 
