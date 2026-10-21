@@ -1,84 +1,29 @@
-# 大模型安全论文阅读笔记 · LLM Security Paper Notes
+# 大模型安全 · 论文阅读与研究背景
 
-面向关注大模型安全的研究者，记录论文的方法理解、实验评价与开放问题。当前从越狱攻防、因果发现和可解释性切入。
+整理大模型越狱攻防的研究脉络，记录论文方法、实验证据与阅读思考。
 
-Chinese paper reading notes on LLM security, with a focus on methods, experimental evidence, and open research questions.
+**46 项背景文献与工具 · 3 篇精读笔记 · 1 张主要论文关系图**
 
-## 从这里开始
+## 研究背景
 
-### Causal Analyst：从因果视角理解大模型越狱攻防
+**[大模型越狱：背景与历史研究](jailbreak-background/README.md)**
 
-**论文：** *A Causal Perspective for Enhancing Jailbreak Attack and Defense* · NDSS 2026
+从已读论文的引言与相关工作出发，按年份汇总攻击、护栏和防御。核心贡献依据原文，出处保留论文名与 PDF 页码。
 
-这篇笔记沿着「可读提示特征 → 表示融合 → 图学习 → 攻防应用」梳理方法，并重点讨论一个问题：
+[核心文献表](jailbreak-background/README.md#literature) · [主要论文关系图](jailbreak-background/README.md#relations) · [文献索引](jailbreak-background/资料/文献索引.json)
 
-> 应用收益中，因果图、特征知识与额外训练各自贡献了多少？
+## 精读笔记
 
-笔记包含：
-
-- 数据规模的区分：5,000 个提示与跨 7 个模型的 35,000 次测试尝试。
-- 方法关系：提示分类、图学习与文字解释如何衔接。
-- 实验证据：原文已有的长度控制消融、Vanilla Extractor 对照，以及收益归因仍可继续追问的地方。
-- 开放问题：数据覆盖、特征标注与图结构稳定性如何影响解释结论。
-
-**[阅读完整笔记](https://github.com/Zhang123d/paper-reading-notes/blob/main/causal-analyst/README.md)** · [论文页面](https://www.ndss-symposium.org/ndss-paper/a-causal-perspective-for-enhancing-jailbreak-attack-and-defense/) · [作者代码](https://github.com/Master-PLC/Causal-Analyst)
-
-### TRAP：策略树如何学习，实验优势如何解释
-
-**论文：** *TRAP: Tree-Guided Reinforcement-Augmented Probing for Automated LLM Jailbreaking* · arXiv v1，2026
-
-这篇笔记沿着「固定策略树 → 共享偏好抽样 → 提示构造 → 反馈更新」解释框架，重点区分：
-
-> 抽到不同路径，是否意味着根据当前 goal 选择了适合的策略？
-
-笔记包含：
-
-- 偏好值如何转成逐层抽样概率，为什么探索与任务匹配需要区分。
-- 主比较、52 个目标消融与多裁判验证分别能说明什么。
-- 既有策略组织、层次选择及检索复用的贡献，以及实验归因的边界。
-- 框架图、学习迭代图与 164 个叶节点的策略树展开图。
-
-**[阅读第二篇笔记](trap/README.md)** · [论文页面](https://arxiv.org/abs/2610.17313v1) · [作者代码](https://github.com/Rezamirbagheri110/TRAP)
-
-### Best-of-N：随机增强与大模型多模态越狱
-
-**论文：** *Best-of-N Jailbreaking* · NeurIPS 2025
-
-这篇图文笔记从中文摘要和整体框架入手，介绍文本、图像、音频中的随机增强，再结合实验图表理解：
-
-> 预算内成功过一次，与找到一个稳定有效的输入，有什么区别？
-
-笔记包含：
-
-- 论文信息、研究背景、核心贡献与三模态方法讲解。
-- 作者框架图，以及根据原文表3重绘的预算—ASR图。
-- 预算规律、组合方法与成功输入的重复可靠性。
-- 集中的阅读思考、精读建议与公开资源说明。
-
-**[阅读第三篇笔记](best-of-n/README.md)** · [会议页面](https://papers.nips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html) · [作者代码](https://github.com/jplhughes/bon-jailbreaking)
-
-## 笔记索引
-
-| 论文 | 会议 / 版本 | 主题 | 阅读切入点 |
+| 论文 | 会议 / 版本 | 研究主题 | 阅读关注点 |
 | --- | --- | --- | --- |
-| [Causal Analyst](https://github.com/Zhang123d/paper-reading-notes/blob/main/causal-analyst/README.md) | NDSS 2026 | 大模型安全、越狱攻防、因果发现 | 因果图的作用能否与特征知识、额外训练区分？ |
-| [TRAP](trap/README.md) | arXiv v1，2026 | 黑盒越狱、策略树、梯度赌博机、经验复用 | 共享策略偏好是否实现了对当前 goal 的匹配？ |
-| [Best-of-N](best-of-n/README.md) | NeurIPS 2025 | 黑盒越狱、多模态、随机增强、预算规律 | 高预算覆盖率是否意味着输入稳定有效？ |
+| [Causal Analyst](causal-analyst/README.md) | NDSS 2026 | 可读提示特征、因果图、越狱攻防 | 图结构、特征知识与额外训练的收益如何区分？ |
+| [TRAP](trap/README.md) | arXiv v1，2026 | 黑盒越狱、策略树、经验复用 | 跨任务共享偏好是否实现了当前任务的策略匹配？ |
+| [Best-of-N](best-of-n/README.md) | NeurIPS 2025 | 随机增强、多模态、查询预算 | 预算内至少成功一次与固定输入重复有效有何区别？ |
 
-当前收录 3 篇笔记。
+## 阅读路径
 
-## 阅读方式
+先通过[背景表与关系图](jailbreak-background/README.md)建立全貌，再按兴趣阅读：**Causal Analyst** 关注提示特征与结果，**TRAP** 关注策略选择，**Best-of-N** 关注随机采样与预算。
 
-每篇笔记围绕三个层次展开：
+论文事实附原文出处，个人理解与评价在笔记中另行说明；图表来源见各篇说明。
 
-1. **论文提出了什么：** 问题、方法、数据与实验设计。
-2. **我怎样理解：** 贡献评价、关键假设与方法间的联系。
-3. **还需要什么证据：** 已有对照能说明什么，哪些问题仍需验证。
-
-笔记中的个人评价与论文结论分别标明。涉及复现时，需另外说明实验设置与实际完成情况。
-
-## 交流与纠错
-
-欢迎通过 [Issue](https://github.com/Zhang123d/paper-reading-notes/issues) 指出理解偏差、补充相关实验，或推荐适合对照阅读的论文。讨论时附上笔记段落、原文位置或实验依据，便于一起核对。
-
-论文与配图的来源见各篇笔记。
+欢迎通过 [Issue](https://github.com/Zhang123d/paper-reading-notes/issues) 补充文献或指出理解偏差，并附上原文页码以便核对。

@@ -1,0 +1,63 @@
+flowchart TB
+  subgraph a["后缀优化与可控生成"]
+    gcg["GCG  [20]<br/>2023 · 梯度与贪心后缀搜索"]
+    ppl["困惑度检测  [22]<br/>2023 · PPL + 长度特征"]
+    liu["AutoDAN-Liu  [7]<br/>2023 / ICLR 2024 · 遗传搜索"]
+    zhu["AutoDAN-Zhu  N06<br/>2023 / COLM 2024 · 梯度 + 可读性"]
+    cold["COLD Decoding  [21]<br/>2022 · 受约束文本生成"]
+    coldattack["COLD-Attack  [12]<br/>2024 · 可控攻击生成"]
+  end
+  subgraph b["反馈搜索与经验复用"]
+    pair["PAIR  N05<br/>2023 · 根据反馈迭代改写"]
+    tap["TAP  N07<br/>2023 / NeurIPS 2024 · 分支与剪枝"]
+    turbo["AutoDAN-Turbo  N18<br/>2024 / ICLR 2025 · 发现与复用策略"]
+    trap["TRAP  N27<br/>2026 · 跨目标共享的策略树政策"]
+    rl["RL-JACK / PathSeeker<br/>2024 · N16 / N17 · 强化学习搜索"]
+  end
+  subgraph c["护栏与双重越狱"]
+    guard["Llama Guard  N08<br/>2023 · 输入 / 输出安全分类"]
+    prp["PRP  [9]<br/>2024 · 扰动传播到待审核的响应"]
+    jam["JAM  [19]<br/>2024 · 密文字符与审核规避"]
+    dual["DUALBREACH  N25<br/>NDSS 2026 · 主模型 + 多类护栏"]
+    combined["NeMo / Guardrails AI<br/>2023 · [16] / [17] · 组合护栏"]
+    pap["PAP  [10]<br/>2024 · 黑盒自然语言说服"]
+  end
+  subgraph d["采样与跨模态"]
+    generation["Generation Exploitation  N23<br/>2023 · 改变生成与采样配置"]
+    bon["Best-of-N  N26<br/>2024 / NeurIPS 2025 · 随机增强"]
+    figstep["FigStep  N24<br/>2023 / AAAI 2025 · 图像文字"]
+    msj["Many-shot Jailbreaking  N32<br/>2024 · 长上下文示范"]
+    circuit["Circuit Breakers  N12<br/>2024 · 内部表示防御"]
+  end
+  gcg -.->|"针对异常后缀的检测"| ppl
+  gcg -.->|"可读性路线对照"| liu
+  gcg -.->|"兼顾可读性的优化"| zhu
+  cold -->|"明确采用的基础算法"| coldattack
+  pair -.->|"迭代改写 / 树搜索对照"| tap
+  tap -.->|"提示树 / 策略树"| trap
+  turbo -.->|"经验复用的不同组织方式"| trap
+  rl -.->|"学习驱动的搜索路线"| trap
+  guard -.->|"PRP 的护栏研究对象"| prp
+  prp -.->|"研究对象与优化目标对照"| dual
+  jam -.->|"字符混淆 / 联合优化对照"| dual
+  combined -.->|"DUALBREACH 评测的护栏"| dual
+  pap -.->|"自然语言攻击的路线对照"| dual
+  generation -.->|"采样思想的对照"| bon
+  figstep -.->|"视觉输入路线对照"| bon
+  msj -->|"在 BoN 中实际组合"| bon
+  circuit -.->|"BoN 测试的防御配置"| bon
+  linkStyle 0 stroke:#B75259,stroke-width:2px
+  linkStyle 1 stroke:#8995A6
+  linkStyle 2 stroke:#8995A6
+  linkStyle 4 stroke:#8995A6
+  linkStyle 5 stroke:#8995A6
+  linkStyle 6 stroke:#8995A6
+  linkStyle 7 stroke:#8995A6
+  linkStyle 8 stroke:#B75259,stroke-width:2px
+  linkStyle 9 stroke:#8995A6
+  linkStyle 10 stroke:#8995A6
+  linkStyle 11 stroke:#B75259,stroke-width:2px
+  linkStyle 12 stroke:#8995A6
+  linkStyle 13 stroke:#8995A6
+  linkStyle 14 stroke:#8995A6
+  linkStyle 16 stroke:#B75259,stroke-width:2px
