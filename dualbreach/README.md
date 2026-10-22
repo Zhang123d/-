@@ -2,8 +2,8 @@
 
 [首页](../README.md) · [研究背景](../jailbreak-background/README.md) · [Causal Analyst](../causal-analyst/README.md) · [TRAP](../trap/README.md) · [Best-of-N](../best-of-n/README.md) · **DUALBREACH**
 
-> **论文：** *DUALBREACH: Efficient Dual-Jailbreaking via Target-Driven Initialization and Multi-Target Optimization* · NDSS 2026  
-> **作者：** Xinzhe Huang、Kedong Xiu、Tianhang Zheng 等，浙江大学  
+> **论文：** *DUALBREACH: Efficient Dual-Jailbreaking via Target-Driven Initialization and Multi-Target Optimization* · NDSS 2026<br>
+> **作者：** Xinzhe Huang、Kedong Xiu、Tianhang Zheng 等，浙江大学<br>
 > [论文页面](https://www.ndss-symposium.org/ndss-paper/dualbreach-efficient-dual-jailbreaking-via-target-driven-initialization-and-multi-target-optimization/) · [作者代码](https://github.com/hxz-sec/DualBreach)
 
 ## 一次拒绝，能说明系统安全吗？
@@ -65,4 +65,3 @@ DUALBREACH 的设计逻辑很清楚：**防线有两道，优化就要兼顾两�
 [results]: https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf#page=10
 [oneshot]: https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf#page=11
 [defense]: https://www.ndss-symposium.org/wp-content/uploads/2026-s1062-paper.pdf#page=13
-
